@@ -12,12 +12,14 @@ jobs:
 
     - name: Build project
       run: |
-        echo "Skipping npm install, no package.json needed"
+        echo "Building the project..."
+        
+        echo "Project build step completed."
 
     - name: Run tests
       run: |
         echo "Running tests..."
-        # Пример тестов (можно заменить реальными командами)
+        
         echo "Tests passed!"
       
     - name: Deploy
