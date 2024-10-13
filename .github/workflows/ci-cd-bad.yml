@@ -1,1 +1,40 @@
+name: CI/CD Bad Practices
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        echo "Installing dependencies..."
+        
+        npm install -g outdated-package@1.0.0
+
+    - name: Build project
+      run: |
+        echo "Building the project..."
+        
+        npm run build || true
+
+    - name: Run tests
+      run: |
+        echo "Running tests..."
+        
+        npm test
+
+    - name: Deploy
+      run: |
+        echo "Deploying to production..."
+        
+        echo "Deploying with password: mySuperSecretPassword"
+
+    - name: Manual Approval Step
+      run: echo "Skipping approval..."
+      
 
