@@ -1,4 +1,4 @@
-name: CI/CD Good Practices
+name: CI/CD Bad Practices
 
 on: [push]
 
@@ -12,14 +12,11 @@ jobs:
 
     - name: Build project
       run: |
-        echo "Building the project..."
-        
-        echo "Project build step completed."
+        echo "Skipping npm install, no dependencies needed."
 
     - name: Run tests
       run: |
         echo "Running tests..."
-        
         echo "Tests passed!"
       
     - name: Deploy
